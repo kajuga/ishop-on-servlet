@@ -1,3 +1,5 @@
+package sashokTestServlet;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,26 +8,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/hello")
-public class IShopServlet extends HttpServlet {
-    private static final long serialVersionUID = -31338536290634165L;
+@WebServlet("/sashok")
+public class SashokTestStrvlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
         super.init();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
         out.println("<html><body>");
-        out.println("Hello World!");
+        out.println("Hello world! ::::: SASHOK :::::::");
         out.println("</body></html>");
         out.close();
     }
 
     @Override
     public void destroy() {
-        super.destroy();
+
     }
 }
