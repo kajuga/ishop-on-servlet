@@ -16,6 +16,7 @@ public class Servlet2 extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<html><body>");
 //do not call out.close inside hello-world!!!
+        req.setAttribute("attr1", "serv1");
         req.getRequestDispatcher("/hello-world").include(req, resp);
         out.println("!!!");
         out.println("</body></html>");

@@ -14,8 +14,9 @@ public class HelloWorld extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         resp.setContentType("text/html");
+        String attr1 = (String) req.getAttribute("attr1");
         PrintWriter out = resp.getWriter();
-        out.println("Hello world ::: MY HELLO WORLD servlet");
+        out.println("Hello world ::: MY HELLO WORLD servlet" + attr1);
 //out.close();
     }
 }
