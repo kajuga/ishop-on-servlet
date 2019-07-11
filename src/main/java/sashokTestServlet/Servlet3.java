@@ -10,6 +10,7 @@ import java.io.IOException;
 public class Servlet3 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        req.getSession().setAttribute("attr1", "serv3");
         resp.sendRedirect("/ishop-on-servlet/hello-world");
     }
 }
