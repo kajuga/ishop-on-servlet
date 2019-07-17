@@ -20,7 +20,8 @@ public class TestRequestResponseServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<html><body>");
         out.println("<form action='/ishop-on-servlet/test-req-resp' method='post'>");
-        out.println("ENTER Your name: <input name='name'><br>");
+        out.println("ENTER Your name: <input name='name' value = 'test'><br>");
+        out.println("ENTER Your name: <input name='name' value = 'test2'><br>");
         out.println("<input type='submit'>");
         out.println("</body></html>");
         out.close();
