@@ -9,28 +9,22 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Locale;
 
-@WebServlet("/sashok-test-servlet")
+@WebServlet("/test-req-resp")
 public class TestRequestResponseServlet extends HttpServlet {
-
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         resp.setDateHeader("Date", System.currentTimeMillis());
-        resp.addHeader("autor", "fedorovs.com");
-        resp.addHeader("autor2", "fedorovs2.com");
+        resp.addHeader("autor", "devstudy.net");
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.setLocale(Locale.ITALIAN);
         PrintWriter out = resp.getWriter();
         out.println("<html><body>");
-//        out.println("<form action='/sashok-test-servlet' method='post'>");
-        out.println("<form action='/ishop-on-servlet/sashok-test-servlet' method='post'>");
-//        out.println("<form action='/" + req.getContextPath() + "/sashok-test-servlet' method='post'>");
-        out.println("Your name: <input name='name'><br>");
+        out.println("<form action='/ishop-on-servlet/test-req-resp' method='post'>");
+        out.println("ENTER Your name: <input name='name'><br>");
         out.println("<input type='submit'>");
         out.println("</body></html>");
         out.close();
     }
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
