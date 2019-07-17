@@ -14,14 +14,14 @@ public class HelloWorld extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         resp.setContentType("text/html");
-//        String attr1 = (String) req.getAttribute("attr1");
+        String attr1 = (String) req.getAttribute("attr1");
 
-        String attr1 = (String)req.getSession().getAttribute("attr1");
-        req.getSession().removeAttribute("attr1");
-        resp.getWriter().println("Hello world: "+attr1);
+//        String attr1 = (String)req.getSession().getAttribute("attr1");
+//        req.getSession().removeAttribute("attr1");
+//        resp.getWriter().println("Hello world: "+attr1);
 
         PrintWriter out = resp.getWriter();
-        out.println("Hello world ::: MY HELLO WORLD servlet" + attr1);
+        out.println("Hello world ::: MY HELLO WORLD servlet   " + attr1);
 //out.close();
     }
 }
