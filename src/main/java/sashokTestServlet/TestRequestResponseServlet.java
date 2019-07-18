@@ -15,6 +15,7 @@ public class TestRequestResponseServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.setDateHeader("Date", System.currentTimeMillis());
         resp.addHeader("autor", "devstudy.net");
+        resp.addHeader("kajuga", "sashok.net");
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.setLocale(Locale.ITALIAN);
         PrintWriter out = resp.getWriter();
