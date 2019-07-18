@@ -22,8 +22,8 @@ import static jdk.nashorn.internal.runtime.regexp.RegExpFactory.validate;
         @WebInitParam(name = "login", value = "admin"),
         @WebInitParam(name = "password", value = "password")
 })
-
 public class AdminServlet extends HttpServlet {
+    private static final  long serialVersionUId = 2232133274387435743L;
     private String ip;
     private String accessKey;
     private String login;
@@ -31,10 +31,10 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        ip = getServletConfig().getInitParameter(ip);
-        accessKey = getServletConfig().getInitParameter(accessKey);
-        login = getServletConfig().getInitParameter(login);
-        password = getServletConfig().getInitParameter(password);
+        ip = getServletConfig().getInitParameter("ip");
+        accessKey = getServletConfig().getInitParameter("accessKey");
+        login = getServletConfig().getInitParameter("login");
+        password = getServletConfig().getInitParameter("password");
     }
 
     @Override
@@ -60,7 +60,7 @@ public class AdminServlet extends HttpServlet {
             System.out.println("Login via ip: " + ip);
             return;
         } else {
-            errors.append(String.format("Invalid ip: %\n", ip));
+            errors.append(String.format("Invalid ip: %s\n", ip));
         }
         if (this.accessKey.equals(accessKey)) {
             System.out.println("Login via accessKey: " + accessKey);
