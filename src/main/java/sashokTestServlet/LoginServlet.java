@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
             if(req.getAttribute("error") != null) {
                 out.println("<h5 style='color:red'>"+req.getAttribute("error")+"</h5>");
             }
-            out.println("<form action='/login' method='post'>");
+            out.println("<form action='/ishop-on-servlet/login' method='post'>");
             out.println("<input name='login' placeholder='Login'>");
             out.println("<input name='password' placeholder='Password' type='password'>");
             out.println("<input type='submit' value='Login'>");

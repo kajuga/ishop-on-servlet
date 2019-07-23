@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
-@WebServlet(value="/images/*", initParams = {
-        @WebInitParam(name="ROOT_DIR", value="/home/kajuga/projects/ishop-on-servlet/src/main/webapp/image")
+@WebServlet(value="/image/*", initParams = {
+        @WebInitParam(name="ROOT_DIR", value="D:\\Download\\")
 })
 public class ShowPictureServlet extends HttpServlet {
     private String rootDir;
