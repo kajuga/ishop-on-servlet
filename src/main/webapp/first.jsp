@@ -14,7 +14,16 @@
 <h1>Testing JSP</h1>
 <%--<% %>--%>
 <p>
-<%= "Hello WORLD!!!!!!!!!!!!!!!!!!!!!!" %>
+    <%
+        for (int i = 0; i < 10; i++) {
+            out.println("<p>" + "HELLO WORLD!!!%% " + i + "</p>");
+
+        }
+
+
+
+    %>
+
 </p>
 </body>
 </html>

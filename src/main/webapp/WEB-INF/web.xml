@@ -8,11 +8,21 @@
         <servlet-name>helloTest</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>helloTest</servlet-name>
         <url-pattern>/hello2</url-pattern>
     </servlet-mapping>
+
+<!--    my JSP:-->
+    <servlet>
+        <servlet-name>first</servlet-name>
+        <jsp-file>/first.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>first</servlet-name>
+        <url-pattern>/firstJSP</url-pattern>
+    </servlet-mapping>
+<!--My JSP-->
 
     <session-config>
         <tracking-mode>COOKIE</tracking-mode>
