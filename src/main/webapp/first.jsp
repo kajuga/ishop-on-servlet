@@ -17,13 +17,16 @@
     <%
         for (int i = 0; i < 10; i++) {
             out.println("<p>" + "HELLO WORLD!!!%% " + i + "</p>");
-
         }
-
-
-
     %>
-
+</p>
+<p>
+<p></p>
+<%@page import="java.util.Date, sashokTestServlet.logic.TestClass" %>
+<% TestClass testClass = new TestClass(); %>
+<%=
+testClass.gitInfo()
+%>
 </p>
 </body>
 </html>
