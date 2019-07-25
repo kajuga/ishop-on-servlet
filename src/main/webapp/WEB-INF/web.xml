@@ -14,13 +14,15 @@
     </servlet-mapping>
 
 <!--    my JSP:-->
+
+
     <servlet>
         <servlet-name>first</servlet-name>
         <jsp-file>/first.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>first</servlet-name>
-        <url-pattern>/firstJSP</url-pattern>
+        <url-pattern>/test-servlet</url-pattern>
     </servlet-mapping>
 <!--My JSP-->
 
