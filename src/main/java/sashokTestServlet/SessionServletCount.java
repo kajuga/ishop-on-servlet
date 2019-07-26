@@ -12,40 +12,26 @@ import java.io.PrintWriter;
 @WebServlet("/counter")
 public class SessionServletCount extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Cart cart = (Cart)session.getAttribute("cart");
-
-        String name = request.getParameter("name");
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-
-        if (cart == null) {
-            cart = new Cart();
-            cart.setName(name);
-            cart.setQuantity(quantity);
-
-        }
-        session.setAttribute("cart", cart);
-
-//        Integer count = (Integer) session.getAttribute("cart");
-//        if(count == null) {
-//            session.setAttribute("count", 1);
+        Integer count = (Integer) session.getAttribute("count");
+        if(count == null) {
+            session.setAttribute("count", 1);
 //            count = 1;
-//        }
-//        else
-//            session.setAttribute("count", count + 1);
+        }
+        else
+            session.setAttribute("count", count + 1);
 
-//        PrintWriter pw = response.getWriter();
-//        pw.println("<html>");
-//        pw.println("<h1>YOUR count is: " + count + " </h1>");
-//        pw.println("</html>");
+        PrintWriter pw = response.getWriter();
+        pw.println("<html>");
+        pw.println("<h1>YOUR count is: " + count + " </h1>");
+        pw.println("</html>");
 
-        getServletContext().getRequestDispatcher("/showCart.jsp").forward(request, response);
-
-
-
+        /**
+         * forvard через *.jsp файл
+         */
+//        getServletContext().getRequestDispatcher("/showCart.jsp").forward(request, response);
     }
 }

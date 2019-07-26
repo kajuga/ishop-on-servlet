@@ -14,8 +14,6 @@
     </servlet-mapping>
 
 <!--    my JSP:-->
-
-
     <servlet>
         <servlet-name>first</servlet-name>
         <jsp-file>/first.jsp</jsp-file>
@@ -24,7 +22,36 @@
         <servlet-name>first</servlet-name>
         <url-pattern>/test-servlet</url-pattern>
     </servlet-mapping>
-<!--My JSP-->
+    <!--My JSP-->
+
+<!--    Устанавливаю SET cookies-->
+    <servlet>
+        <servlet-name>SetCookiesServlet</servlet-name>
+        <servlet-class>alishev.SetCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCookiesServlet</servlet-name>
+        <url-pattern>/set-cookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetCookiesServlet</servlet-name>
+        <servlet-class>alishev.GetCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCookiesServlet</servlet-name>
+        <url-pattern>/get-cookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCookiesServlet</servlet-name>
+        <servlet-class>alishev.DeleteCookiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCookiesServlet</servlet-name>
+        <url-pattern>/delete-cookies</url-pattern>
+    </servlet-mapping>
+
 
     <session-config>
         <tracking-mode>COOKIE</tracking-mode>

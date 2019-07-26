@@ -12,8 +12,8 @@
 </head>
 <body>
 <%@ page import="sashokTestServlet.Cart" %>
->
-<% Cart cart = (Cart) session.getAttribute("cart"); %>
+
+<% Cart cart = (Cart)session.getAttribute("cart"); %>
 
 <p style="background-color:DodgerBlue;">Наименование: <%= cart.getName()%></p>
 <p>Количество: <%= cart.getQuantity()%></p>
