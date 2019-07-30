@@ -1,6 +1,7 @@
 package sashokTestServlet;
 
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,7 @@ import java.io.IOException;
         @WebInitParam(name = "login", value = "admin"),
         @WebInitParam(name = "password", value = "password")
 })
+
 public class AdminServlet extends HttpServlet {
     private String ip;
     private String accessKey;
@@ -33,7 +35,6 @@ public class AdminServlet extends HttpServlet {
         login = getServletConfig().getInitParameter("login");
         password = getServletConfig().getInitParameter("password");
     }
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -63,13 +64,13 @@ public class AdminServlet extends HttpServlet {
             System.out.println("Login via accessKey: " + accessKey);
             return;
         } else {
-            errors.append(String.format("Invalid accessKey: %s\n", accessKey));
+            errors.append(String.format("Invalid AccessKey:  %s\n", accessKey));
         }
         if (this.login.equals(login) && (this.password.equals(password))) {
-            System.out.println("Login via login and password: " + login + "/" + password);
+            System.out.println(String.format("Login via login and(or) password: " + login + "/" + password));
             return;
         } else {
-            errors.append(String.format("Invalid login and(or) password: %s/%s\n", login, password));
+            errors.append(String.format("Invalid login and(or) password: %s %s\n", login, password));
         }
         throw new IllegalStateException(errors.toString());
     }
