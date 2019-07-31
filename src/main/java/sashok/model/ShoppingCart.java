@@ -17,7 +17,7 @@ public class ShoppingCart implements Serializable {
         validateShoppingCartSize(idProduct);
         ShoppingCartItem shoppingCartItem = products.get(idProduct);
         if (shoppingCartItem == null) {
-            validateProductCount(count);            //wtf нахера тут эта проверялка, если == null?
+            validateProductCount(count);
             shoppingCartItem = new ShoppingCartItem(idProduct, count);
             products.put(idProduct, shoppingCartItem);
         } else {
