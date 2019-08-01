@@ -3,6 +3,7 @@ package sashok.model;
 import java.io.Serializable;
 
 public class ShoppingCartItem implements Serializable {
+    private static final long serialVersionUID = 6436798264138502851L;
     private int idProduct;
     private int count;
 
@@ -11,8 +12,9 @@ public class ShoppingCartItem implements Serializable {
     }
 
     public ShoppingCartItem(int idProduct, int count) {
+        super();
         this.idProduct = idProduct;
-        count = count;
+        this.count = count;
     }
 
     public int getIdProduct() {

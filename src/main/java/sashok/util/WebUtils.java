@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public final class WebUtils {
+
     public static Cookie findCookie (HttpServletRequest req, String cookieName) {
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
@@ -17,6 +18,7 @@ public final class WebUtils {
             }
         } return null;
     }
+
     public static void setCookie (String name, String value, int age, HttpServletResponse resp) {
         Cookie c = new Cookie(name, value);
         c.setMaxAge(age);
