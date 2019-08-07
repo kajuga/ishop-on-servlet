@@ -5,8 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public final class WebUtils {
-
-    public static Cookie findCookie (HttpServletRequest req, String cookieName) {
+    public static Cookie findCookie(HttpServletRequest req, String cookieName) {
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
             for (Cookie c : cookies) {
@@ -16,16 +15,18 @@ public final class WebUtils {
                     }
                 }
             }
-        } return null;
+        }
+        return null;
     }
 
-    public static void setCookie (String name, String value, int age, HttpServletResponse resp) {
+    public static void setCookie(String name, String value, int age, HttpServletResponse resp) {
         Cookie c = new Cookie(name, value);
         c.setMaxAge(age);
         c.setPath("/");
         c.setHttpOnly(true);
         resp.addCookie(c);
     }
+
     private WebUtils() {
     }
 }

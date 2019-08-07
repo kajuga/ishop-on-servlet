@@ -10,6 +10,7 @@ import java.util.Map;
 import sashok.exception.ValidationException;
 
 public class ShoppingCart implements Serializable {
+    private static final long serialVersionUID = 1535770438453611801L;
     private Map<Integer, ShoppingCartItem> products = new HashMap<>();
     private int totalCount = 0;
 
@@ -39,13 +40,6 @@ public class ShoppingCart implements Serializable {
         }
     }
 
-    private void refreshStatistics() {
-        totalCount = 0;
-        for (ShoppingCartItem shoppingCartItem : getItems()) {
-            totalCount += shoppingCartItem.getCount();
-        }
-    }
-
     public Collection<ShoppingCartItem> getItems() {
         return products.values();
     }
@@ -55,21 +49,36 @@ public class ShoppingCart implements Serializable {
     }
 
     private void validateProductCount(int count) {
-        if (count > Constants.MAX_ONETYPE_PRODUCT_COUNT_PER_SHOPPING_CART) {
-            throw new ValidationException("Limit for product count reached: count=" + count);
+        if(count > Constants.MAX_PRODUCT_COUNT_PER_SHOPPING_CART){
+            throw new ValidationException("Limit for product count reached: count="+count);
         }
     }
 
-    private void validateShoppingCartSize(int idProduct) {
-        if (products.size() > Constants.MAX_PRODUCTS_PER_SHOPPING_CART ||
+    private void validateShoppingCartSize(int idProduct){
+        if(products.size() > Constants.MAX_PRODUCTS_PER_SHOPPING_CART ||
                 (products.size() == Constants.MAX_PRODUCTS_PER_SHOPPING_CART && !products.containsKey(idProduct))) {
-            throw new ValidationException("Limit for ShoppingCart size reached: size = " + products.size());
+            throw new ValidationException("Limit for ShoppingCart size reached: size="+products.size());
+        }
+    }
+
+    private void refreshStatistics() {
+        totalCount = 0;
+        for (ShoppingCartItem shoppingCartItem : getItems()) {
+            totalCount += shoppingCartItem.getCount();
         }
     }
 
     @Override
     public String toString() {
         return String.format("ShoppingCart [products=%s, totalCount=%s]", products, totalCount);
+    }
+
+    public String getView(){
+        StringBuilder r = new StringBuilder();
+        for (ShoppingCartItem shoppingCartItem : getItems()) {
+            r.append(shoppingCartItem.getIdProduct()).append("-&gt;").append(shoppingCartItem.getCount()).append("<br>");
+        }
+        return r.toString();
     }
 }
 
