@@ -45,7 +45,7 @@ public class ShoppingCartServlet extends HttpServlet {
     protected void addProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ShoppingCart shoppingCart = SessionUtils.getCurrentShoppingCart(req);
         Random r = new Random();
-        shoppingCart.addProduct(r.nextInt(2), r.nextInt(1)+1);
+        shoppingCart.addProduct(r.nextInt(20), r.nextInt(1)+1);
     }
 
     protected void sync(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
