@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html;
 charset=UTF-8"%>
-<%! private int count1=1; %>
-<jsp:declaration>private int count2=2;</jsp:declaration>
+<%! private int count1=111; %>
+<jsp:declaration>private int count2=555;</jsp:declaration>
 count1: <%=count1%> <br/>
 count2: <jsp:expression>count2</jsp:expression> <br/>
 <% System.out.println("Hello1"); %>
