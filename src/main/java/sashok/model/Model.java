@@ -14,7 +14,7 @@ public class Model implements Serializable {
     public String getData() {
         StringBuilder sb = new StringBuilder();
         for (String item : list) {
-            sb.append(item).append(" || ");
+            sb.append(item).append(" ||| ");
         }
         return sb.toString();
     }

@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(filterName="TestFilter", urlPatterns="/*")
+@WebFilter("/*")
 public class TestFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         filterConfig.getServletContext();
@@ -17,5 +17,6 @@ public class TestFilter implements Filter {
         chain.doFilter(request, response);
     }
     public void destroy() {
+        System.out.println();
     }
 }

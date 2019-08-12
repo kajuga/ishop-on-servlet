@@ -27,4 +27,4 @@ ${item } ||
 %>
 <br>
 
-foreach3= ${model.data}<br>
+foreach3=${model.data}<br>
