@@ -4,6 +4,10 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" id="data-fabric-web-tool">
 
+    <listener>
+        <listener-class>sashok.listener.ServletContextListenerImpl2</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>helloTest</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
