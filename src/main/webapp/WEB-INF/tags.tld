@@ -5,15 +5,33 @@
     <jsp-version>2.3</jsp-version>
     <short-name>tags</short-name>
     <!--<shortname>tags</shortname>-->
+<!--    <tag>-->
+<!--        <name>static</name>-->
+<!--        <tag-class>sashok.tag.jsp1.StaticTag</tag-class>-->
+<!--        <body-content>empty</body-content>-->
+<!--    </tag>-->
+
     <tag>
         <name>static</name>
-        <tag-class>sashok.tag.jsp1.StaticTag</tag-class>
+        <tag-class>sashok.tag.jsp2.StaticTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 
+<!--    <tag>-->
+<!--        <name>attr</name>-->
+<!--        <tag-class>sashok.tag.jsp1.AttrTag</tag-class>-->
+<!--        <body-content>empty</body-content>-->
+<!--        <attribute>-->
+<!--            <name>condition</name>-->
+<!--            <required>true</required>-->
+<!--            <type>java.lang.Boolean</type>-->
+<!--            <rtexprvalue>true</rtexprvalue>-->
+<!--        </attribute>-->
+<!--    </tag>-->
+
     <tag>
         <name>attr</name>
-        <tag-class>sashok.tag.jsp1.AttrTag</tag-class>
+        <tag-class>sashok.tag.jsp2.AttrTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>condition</name>
