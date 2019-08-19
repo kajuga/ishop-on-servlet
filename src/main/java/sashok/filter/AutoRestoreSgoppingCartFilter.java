@@ -1,7 +1,7 @@
 package sashok.filter;
 
 import sashok.model.ShoppingCart;
-import sashok.util.SessionUtils;
+import ishop.util.SessionUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

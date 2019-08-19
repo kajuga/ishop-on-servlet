@@ -1,4 +1,4 @@
-package sashok.util;
+package ishop.util;
 
 import sashok.Constants;
 import sashok.model.ShoppingCart;

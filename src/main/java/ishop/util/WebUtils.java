@@ -1,4 +1,4 @@
-package sashok.util;
+package ishop.util;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

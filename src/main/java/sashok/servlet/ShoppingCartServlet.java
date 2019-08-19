@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import sashok.model.ShoppingCart;
 import sashok.model.ShoppingCartItem;
-import sashok.util.SessionUtils;
+import ishop.util.SessionUtils;
 
 /**
  *

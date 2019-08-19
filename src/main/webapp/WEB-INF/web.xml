@@ -3,19 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" id="data-fabric-web-tool">
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>src/main/resources/logger-config.xml</param-value>
+    </context-param>
 
     <listener>
         <listener-class>sashok.listener.ServletContextListenerImpl2</listener-class>
     </listener>
 
-    <servlet>
-        <servlet-name>helloTest</servlet-name>
-        <servlet-class>HelloServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>helloTest</servlet-name>
-        <url-pattern>/hello2</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>helloTest</servlet-name>-->
+<!--        <servlet-class>HelloServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>helloTest</servlet-name>-->
+<!--        <url-pattern>/hello2</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 <!--    my JSP:-->
     <servlet>
@@ -51,10 +55,19 @@
         <servlet-name>DeleteCookiesServlet</servlet-name>
         <servlet-class>alishev.DeleteCookiesServlet</servlet-class>
     </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>Faces Servlet</servlet-name>-->
+<!--        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>-->
+<!--        <load-on-startup>1</load-on-startup>-->
+<!--    </servlet>-->
     <servlet-mapping>
         <servlet-name>DeleteCookiesServlet</servlet-name>
         <url-pattern>/delete-cookies</url-pattern>
     </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Faces Servlet</servlet-name>-->
+<!--        <url-pattern>*.xhtml</url-pattern>-->
+<!--    </servlet-mapping>-->
 
     <!-- Session Configuration -->
     <session-config>
