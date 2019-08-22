@@ -8,23 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("/*")
-public class ErrorHandlerFilter implements Filter {
+@WebFilter(filterName = "ErrorHandlerFilter")
+public class ErrorHandlerFilter extends AbstractFilter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
+
     @Override
-    public void doFilter(ServletRequest req, ServletResponse resp,
-                         FilterChain chain) throws IOException, ServletException {
+    public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain chain) throws IOException, ServletException {
         try {
             chain.doFilter(req, resp);
         } catch (Throwable th) {
-            String requestUrl = ((HttpServletRequest)req).getRequestURI();
-//            LOGGER.error("Request " + requestUrl + " failed: " + th.getMessage(), th);
-            RoutingUtils.forwardToPage("er ror.jsp", (HttpServletRequest)req, (HttpServletResponse)resp);
+            String requestUrl = req.getRequestURI();
+            LOGGER.error("Request " + requestUrl + " failed: " + th.getMessage(), th);
+            RoutingUtils.forwardToPage("er ror.jsp", req, resp);
         }
-    }
-    @Override
-    public void destroy() {
     }
 }

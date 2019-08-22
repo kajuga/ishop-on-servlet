@@ -3,75 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" id="data-fabric-web-tool">
-    <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>src/main/resources/logger-config.xml</param-value>
-    </context-param>
 
-    <listener>
-        <listener-class>sashok.listener.ServletContextListenerImpl2</listener-class>
-    </listener>
 
-<!--    <servlet>-->
-<!--        <servlet-name>helloTest</servlet-name>-->
-<!--        <servlet-class>HelloServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>helloTest</servlet-name>-->
-<!--        <url-pattern>/hello2</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <filter-mapping>
+        <filter-name>ErrorHandlerFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-<!--    my JSP:-->
-    <servlet>
-        <servlet-name>first</servlet-name>
-        <jsp-file>/first.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>first</servlet-name>
-        <url-pattern>/test-servlet</url-pattern>
-    </servlet-mapping>
-    <!--My JSP-->
+    <filter-mapping>
+        <filter-name>TrimResponseFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-<!--    Устанавливаю SET cookies-->
-    <servlet>
-        <servlet-name>SetCookiesServlet</servlet-name>
-        <servlet-class>alishev.SetCookiesServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SetCookiesServlet</servlet-name>
-        <url-pattern>/set-cookies</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>GetCookiesServlet</servlet-name>
-        <servlet-class>alishev.GetCookiesServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>GetCookiesServlet</servlet-name>
-        <url-pattern>/get-cookies</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeleteCookiesServlet</servlet-name>
-        <servlet-class>alishev.DeleteCookiesServlet</servlet-class>
-    </servlet>
-<!--    <servlet>-->
-<!--        <servlet-name>Faces Servlet</servlet-name>-->
-<!--        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
-    <servlet-mapping>
-        <servlet-name>DeleteCookiesServlet</servlet-name>
-        <url-pattern>/delete-cookies</url-pattern>
-    </servlet-mapping>
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>Faces Servlet</servlet-name>-->
-<!--        <url-pattern>*.xhtml</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <filter-mapping>
+        <filter-name>AutoRestoreShoppingCartFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <!-- Session Configuration -->
     <session-config>
-        <session-timeout>60</session-timeout>
+        <session-timeout>30</session-timeout>
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
 

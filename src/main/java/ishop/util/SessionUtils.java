@@ -1,7 +1,7 @@
 package ishop.util;
 
-import sashok.Constants;
-import sashok.model.ShoppingCart;
+import ishop.Constants;
+import ishop.model.ShoppingCart;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

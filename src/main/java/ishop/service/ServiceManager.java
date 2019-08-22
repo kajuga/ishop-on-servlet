@@ -15,11 +15,14 @@ public class ServiceManager {
     public void close() { //close resources
          }
 
+
         private BusinessService businessService;
         public BusinessService getBusinessService() {
             return businessService;
         }
-private ServiceManager(ServletContext context) {
-//init services
+
+
+        private ServiceManager(ServletContext context) {
+            //init services
         }
     }
