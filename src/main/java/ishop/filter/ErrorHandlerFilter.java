@@ -2,18 +2,17 @@ package ishop.filter;
 
 import ishop.util.RoutingUtils;
 
-import javax.servlet.*;
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-@WebFilter(filterName = "ErrorHandlerFilter")
+
+@WebFilter(filterName="ErrorHandlerFilter")
 public class ErrorHandlerFilter extends AbstractFilter {
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
-
     @Override
     public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain chain) throws IOException, ServletException {
         try {
@@ -21,7 +20,8 @@ public class ErrorHandlerFilter extends AbstractFilter {
         } catch (Throwable th) {
             String requestUrl = req.getRequestURI();
             LOGGER.error("Request " + requestUrl + " failed: " + th.getMessage(), th);
-            RoutingUtils.forwardToPage("er ror.jsp", req, resp);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            RoutingUtils.forwardToPage("error.jsp", req, resp);
         }
     }
 }

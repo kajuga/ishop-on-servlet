@@ -1,4 +1,7 @@
-package ishop.service;
+package ishop.service.impl;
+
+import ishop.service.OrderService;
+import ishop.service.ProductService;
 
 import javax.servlet.ServletContext;
 
@@ -16,13 +19,20 @@ public class ServiceManager {
          }
 
 
-        private BusinessService businessService;
-        public BusinessService getBusinessService() {
-            return businessService;
-        }
+        private ProductService productService;
+        private OrderService orderService;
 
+    public ProductService getProductService() {
+        return productService;
+    }
 
-        private ServiceManager(ServletContext context) {
+    public OrderService getOrderService() {
+        return orderService;
+    }
+
+    private ServiceManager(ServletContext context) {
             //init services
+            productService = new ProductServiceImpl();
+            orderService = new OrderServiceImpl();
         }
     }

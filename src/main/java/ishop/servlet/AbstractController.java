@@ -1,7 +1,6 @@
 package ishop.servlet;
 
-import ishop.service.BusinessService;
-import ishop.service.ServiceManager;
+import ishop.service.impl.ServiceManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
