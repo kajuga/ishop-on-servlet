@@ -1,4 +1,5 @@
 package ishop.service;
 
-public class ProductService {
+public interface ProductService {
+
 }

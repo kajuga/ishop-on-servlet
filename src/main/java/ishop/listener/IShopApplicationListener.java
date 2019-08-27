@@ -16,8 +16,13 @@ public class IShopApplicationListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        serviceManager = ServiceManager.getInstance(sce.getServletContext());
-        LOGGER.info("Web application 'ishop' initialized");
+        try {
+            serviceManager = ServiceManager.getInstance(sce.getServletContext());
+            LOGGER.info("Web application 'ishop' initialized");
+        } catch (RuntimeException e) {
+            LOGGER.error("Web application 'ishop' init failed: " + e.getMessage(), e);
+            throw e;
+        }
     }
 
     @Override

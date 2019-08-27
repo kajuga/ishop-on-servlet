@@ -1,4 +1,4 @@
 package ishop.service;
 
-public class OrderService {
+public interface OrderService {
 }

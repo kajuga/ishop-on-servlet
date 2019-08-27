@@ -4,6 +4,9 @@ import ishop.service.OrderService;
 import ishop.service.ProductService;
 
 import javax.servlet.ServletContext;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class ServiceManager {
     public static ServiceManager getInstance(ServletContext context) {
@@ -15,13 +18,6 @@ public class ServiceManager {
         return instance;
     }
 
-    public void close() { //close resources
-         }
-
-
-        private ProductService productService;
-        private OrderService orderService;
-
     public ProductService getProductService() {
         return productService;
     }
@@ -30,9 +26,31 @@ public class ServiceManager {
         return orderService;
     }
 
+    public String getApplicationProperty(String key) {
+        return applicationProperties.getProperty(key);
+
+    }
+
+    public void close() {
+    }
+
+    private final Properties applicationProperties = new Properties();
+    private final ProductService productService;
+    private final OrderService orderService;
+
     private ServiceManager(ServletContext context) {
-            //init services
-            productService = new ProductServiceImpl();
-            orderService = new OrderServiceImpl();
+        //init services
+        loadApplicationProperties();
+        productService = new ProductServiceImpl();
+        orderService = new OrderServiceImpl();
+    }
+
+
+    private void loadApplicationProperties() {
+        try (InputStream in = ServiceManager.class.getClassLoader().getResourceAsStream("application.properties")) {
+            applicationProperties.load(in);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
+}
