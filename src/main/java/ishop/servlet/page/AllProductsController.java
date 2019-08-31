@@ -14,9 +14,9 @@ import java.util.List;
 
 @WebServlet("/products")
 public class AllProductsController extends AbstractController {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         RoutingUtils.forwardToPage("products.jsp", req, resp);
     }
 }
