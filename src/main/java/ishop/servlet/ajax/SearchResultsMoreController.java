@@ -18,7 +18,6 @@ import ishop.util.RoutingUtils;
  */
 @WebServlet("/ajax/html/more/search")
 public class SearchResultsMoreController extends AbstractController {
-	private static final long serialVersionUID = -2651974520717714088L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
