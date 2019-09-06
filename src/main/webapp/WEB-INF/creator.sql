@@ -6,8 +6,8 @@ CREATE TABLE public.category
     product_count INTEGER DEFAULT 0 NOT NULL,
     CONSTRAINT category_pkey PRIMARY KEY (id),
     CONSTRAINT category_url_key UNIQUE (url)
-)
-WITH (oids = false);
+);
+# WITH (oids = false);
 
 CREATE TABLE public.producer
 (
